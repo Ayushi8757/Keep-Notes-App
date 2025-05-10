@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+  <aside class="sidebar">
+    <h1 class="app-title">📝Keep Notes</h1>
+    <button class="new-note-btn" onclick="addNote()">+ New Note</button>
+    <div class="search-box">
+      <input type="text" class="search-input" placeholder="Search notes..." />
+    </div>
+    <div class="view-toggle">
+      <label>
+        <input type="checkbox" id="showArchived" onchange="renderNotes()" />
+        Show Archived
+      </label>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="notes-grid" id="notesGrid"></div>
+  </main>
+
+  <!-- Snackbar for undo -->
+  <div id="snackbar">
+    <span>Note deleted</span>
+    <button onclick="undoDelete()">Undo</button>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
